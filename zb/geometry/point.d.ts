@@ -2,32 +2,32 @@ import Axis from './axis';
 import Direction from './direction';
 
 export default class Point {
-  public x: number;
-  public y: number;
+  x: number;
+  y: number;
   constructor(x: number, y: number);
-  public setAxisValue(axis: Axis, value: number): void;
-  public getAxisValue(axis: Axis): number;
-  public getValue(): Value;
-  public getDistance(point: Point): number;
-  public moveByAxis(axis: Axis, value: number): void;
-  public moveInDirection(direction: Direction, value: number): void;
-  public moveXY(dx: number, dy: number): void;
-  public clone(): Point;
-  public invertPoint(): Point;
-  public add(b: Point): Point;
-  public sub(b: Point): Point;
-  public floorPage(page: Point): Point;
-  public ceilPage(page: Point): Point;
-  public modPage(page: Point): Point;
-  public page(page: Point): Point;
-  public scale(page: Point): Point;
-  public scaleAxis(axis: Axis, value: number): Point;
-  public toString(): string;
-  public static createByValue(value: Value): Point;
-  public static createByNumbers(x: number, y: number): Point;
-  public static create(x: number, y: number): Point;
-  public static createZeroPoint(): Point;
-  public static createOneOnePoint(): Point;
+  setAxisValue(axis: Axis, value: number): void;
+  getAxisValue(axis: Axis): number;
+  getValue(): Value;
+  getDistance(point: Point): number;
+  moveByAxis(axis: Axis, value: number): void;
+  moveInDirection(direction: Direction, value: number): void;
+  moveXY(dx: number, dy: number): void;
+  clone(): Point;
+  invertPoint(): Point;
+  add(b: Point): Point;
+  sub(b: Point): Point;
+  floorPage(page: Point): Point;
+  ceilPage(page: Point): Point;
+  modPage(page: Point): Point;
+  page(page: Point): Point;
+  scale(page: Point): Point;
+  scaleAxis(axis: Axis, value: number): Point;
+  toString(): string;
+  static createByValue(value: Value): Point;
+  static createByNumbers(x: number, y: number): Point;
+  static create(x: number, y: number): Point;
+  static createZeroPoint(): Point;
+  static createOneOnePoint(): Point;
 }
 
 export type Value = {

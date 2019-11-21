@@ -1,14 +1,14 @@
 type registry = { [key: string]: Proportion };
 
 export class Proportion {
-  public x: number;
-  public y: number;
-  public name: string;
+  x: number;
+  y: number;
+  name: string;
   protected _name: string;
   protected _x: number;
   protected _y: number;
   constructor(name: string, opt_x?: number, opt_y?: number);
-  public toString(): string;
+  toString(): string;
 }
 
 export const Common: {
