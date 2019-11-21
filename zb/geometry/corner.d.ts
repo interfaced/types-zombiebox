@@ -9,10 +9,10 @@ export default class Corner {
   getDirections(): Direction[];
   getSigns(): Sign[];
   setSigns(signs: Sign[]): void;
-  public static createBySigns(signs: Sign[]): Corner;
-  public static createByDirections(directions: Direction[]): Corner;
-  public static createLeftUp(): Corner;
-  public static createLeftDown(): Corner;
-  public static createRightUp(): Corner;
-  public static createRightDown(): Corner;
+  static createBySigns(signs: Sign[]): Corner;
+  static createByDirections(directions: Direction[]): Corner;
+  static createLeftUp(): Corner;
+  static createLeftDown(): Corner;
+  static createRightUp(): Corner;
+  static createRightDown(): Corner;
 }

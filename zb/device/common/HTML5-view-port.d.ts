@@ -11,11 +11,11 @@ export default class HTML5ViewPort extends AbstractViewPort {
   protected _videoContainer: HTMLDivElement;
   protected _video: HTMLVideoElement;
   protected _CSSVendorPrefix: string;
-  public updateViewPort(): void;
-  public isAspectRatioSupported(ratio: AspectRatio): boolean;
-  public hasAspectRatioFeature(): boolean;
-  public hasAreaChangeFeature(): boolean;
-  public setVideoObject(video: HTMLVideoElement): void;
+  updateViewPort(): void;
+  isAspectRatioSupported(ratio: AspectRatio): boolean;
+  hasAspectRatioFeature(): boolean;
+  hasAreaChangeFeature(): boolean;
+  setVideoObject(video: HTMLVideoElement): void;
   protected _setHTMLElementRect(element: HTMLElement, rect: Rect): void;
   protected _updateVideoInfo(): void;
   protected _calculateVideoArea(): Rect;
