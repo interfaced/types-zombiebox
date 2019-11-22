@@ -5,6 +5,7 @@ import IInfo from './interfaces/i-info';
 import IInput from './interfaces/i-input';
 import IStorage from './interfaces/i-storage';
 import IVideo from './interfaces/i-video';
+import IStatefulVideo from './interfaces/i-stateful-video';
 
 export default abstract class AbstractDevice extends EventPublisher implements IDevice {
   constructor();
@@ -14,6 +15,7 @@ export default abstract class AbstractDevice extends EventPublisher implements I
   EVENT_READY: string;
   abstract init(): void;
   abstract createVideo(rect: Rect): IVideo;
+  abstract createStatefulVideo(rect: Rect): IStatefulVideo;
   abstract getMAC(): string;
   abstract getIP(): string;
   abstract exit(): void;

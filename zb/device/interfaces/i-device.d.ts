@@ -4,6 +4,7 @@ import IInfo from './i-info';
 import IInput from './i-input';
 import IStorage from './i-storage';
 import IVideo from './i-video';
+import IStatefulVideo from './i-stateful-video';
 
 export default interface IDevice extends IEventPublisher {
   info: IInfo;
@@ -12,6 +13,7 @@ export default interface IDevice extends IEventPublisher {
   EVENT_READY: string;
   init(): void;
   createVideo(rect: Rect): IVideo;
+  createStatefulVideo(rect: Rect): IStatefulVideo;
   getMAC(): string;
   getIP(): string;
   exit(): void;
