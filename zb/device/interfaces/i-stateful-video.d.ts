@@ -31,7 +31,7 @@ export default interface IStatefulVideo extends IEventPublisher {
 	pause(): void;
 	stop(): void;
 	getState(): State;
-	getStateTransition(): {from: State, to: State};
+	getStateTransition(): {from: State, to: State} | null;
 	getUrl(): string;
 	getViewport(): IViewPort;
 	getDuration(): number;
