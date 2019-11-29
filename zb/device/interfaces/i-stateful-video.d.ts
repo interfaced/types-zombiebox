@@ -25,27 +25,27 @@ export default interface IStatefulVideo extends IEventPublisher {
     EVENT_VOLUME_CHANGE: string;
     EVENT_SEEKED: string;
     EVENT_RATE_CHANGE: string;
-	prepare(url: string, options: {[key: string]: any}): void;
-	destroy(): void;
-	play(): void;
-	pause(): void;
-	stop(): void;
-	getState(): State;
-	getStateTransition(): {from: State, to: State} | null;
-	getUrl(): string;
-	getViewport(): IViewPort;
-	getDuration(): number;
-	getPosition(): number;
-	setPosition(position: number): void;
-	getPlaybackRate(): number;
-	setPlaybackRate(rate: number): void;
-	getMuted(): boolean;
-	setMuted(muted: boolean): void;
-	toggleMuted(): boolean;
-	getVolume(): number;
-	setVolume(volume: number): void;
-	volumeDown(): number;
-	volumeUp(): number;
+    prepare(url: string, options: { [key: string]: any }): void;
+    destroy(): void;
+    play(): void;
+    pause(): void;
+    stop(): void;
+    getState(): State;
+    getStateTransition(): { from: State, to: State } | null;
+    getUrl(): string;
+    getViewport(): IViewPort;
+    getDuration(): number;
+    getPosition(): number;
+    setPosition(position: number): void;
+    getPlaybackRate(): number;
+    setPlaybackRate(rate: number): void;
+    getMuted(): boolean;
+    setMuted(muted: boolean): void;
+    toggleMuted(): boolean;
+    getVolume(): number;
+    setVolume(volume: number): void;
+    volumeDown(): number;
+    volumeUp(): number;
 }
 
 export enum State {
@@ -62,7 +62,7 @@ export enum State {
     DESTROYED = 'destroyed'
 }
 
-export const StateDiagram: {[key: string]: State[]};
+export const StateDiagram: { [key: string]: State[] };
 
 export enum MediaFormat {
     DASH = 'dash',
