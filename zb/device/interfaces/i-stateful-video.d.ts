@@ -1,5 +1,7 @@
 import IEventPublisher from '../../events/interfaces/i-event-publisher';
 import IViewPort from './i-view-port';
+import { Type as DRMType } from '../drm/drm';
+import IDRMClient from './i-drm-client';
 
 export default interface IStatefulVideo extends IEventPublisher {
     EVENT_STATE_EXIT: string;
@@ -46,6 +48,8 @@ export default interface IStatefulVideo extends IEventPublisher {
     setVolume(volume: number): void;
     volumeDown(): number;
     volumeUp(): number;
+    attachDRM(client: IDRMClient): void;
+    detachDRM(type: DRMType): void;
 }
 
 export enum State {
@@ -64,14 +68,15 @@ export enum State {
 
 export const StateDiagram: { [key: string]: State[] };
 
-export enum MediaFormat {
-    DASH = 'dash',
-    HLS = 'hls',
-    MP4 = 'mp4',
-    WEBM = 'webm'
+export enum MediaType {
+    DASH = 'application/dash+xml',
+    HLS = 'application/vnd.apple.mpegurl',
+    MP4 = 'video/mp4',
+    WEBM = 'video/webm',
+    MSS = 'application/vnd.ms-sstr+xml'
 }
 
 export enum PrepareOption {
-    FORMAT = 'format',
+    TYPE = 'media-type',
     START_POSITION = 'start-position'
 }
