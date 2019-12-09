@@ -3,6 +3,8 @@ import IStatefulVideo, { State } from './interfaces/i-stateful-video';
 import IViewPort from './interfaces/i-view-port';
 import Rect from '../geometry/rect';
 import StateMachine from '../state-machine';
+import {Type as DRMType} from './drm/drm';
+import IDRMClient from './interfaces/i-drm-client';
 
 export default abstract class AbstractStatefulVideo extends EventPublisher implements IStatefulVideo {
     protected _stateMachine: StateMachine<State>;
@@ -53,6 +55,10 @@ export default abstract class AbstractStatefulVideo extends EventPublisher imple
     abstract setVolume(volume: number): void;
     volumeDown(): number;
     volumeUp(): number;
+    attachDRM(client: IDRMClient): void;
+    detachDRM(type: DRMType): void;
+    static isDRMSupported(type: DRMType): boolean;
+    static canHandleMultiDRM(): boolean;
 }
 
 export class StateError extends Error {
