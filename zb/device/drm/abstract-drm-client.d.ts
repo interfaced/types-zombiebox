@@ -5,7 +5,7 @@ export default class AbstractDRMClient extends EventPublisher implements IDrmCli
     type: string;
     EVENT_ERROR: string;
     constructor();
-    init(): Promise<undefined>;
-    prepare(): Promise<undefined>;
-    destroy(): Promise<undefined>;
+    init(): Promise<any>;
+    prepare(): Promise<any>;
+    destroy(): Promise<any>;
 }
