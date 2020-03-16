@@ -28,7 +28,7 @@ export default interface IVideo extends IEventPublisher {
   EVENT_RATE_CHANGE: string;
   EVENT_VOLUME_CHANGE: string;
   EVENT_STATE_CHANGE: string;
-  play(url: string, opt_startFrom?: number);
+  play(url: string, startFrom?: number);
   resume(): void;
   pause(): void;
   togglePause(): void;
@@ -43,8 +43,8 @@ export default interface IVideo extends IEventPublisher {
   getDuration(): number;
   setVolume(value: number): void;
   getVolume(): number;
-  volumeUp(opt_stp?: number): number;
-  volumeDown(opt_step?: number): number;
+  volumeUp(step?: number): number;
+  volumeDown(step?: number): number;
   setMuted(value: boolean): void;
   getMuted(): boolean;
   isMuted(): boolean;

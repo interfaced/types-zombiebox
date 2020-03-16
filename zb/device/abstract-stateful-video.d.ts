@@ -10,7 +10,7 @@ export default abstract class AbstractStatefulVideo extends EventPublisher imple
     protected _stateMachine: StateMachine<State>;
     protected _rect: Rect;
     protected _viewport: IViewPort;
-    constructor(rect: Rect);
+    constructor();
     EVENT_STATE_EXIT: string;
     EVENT_STATE_ENTER: string;
     EVENT_WILL_PLAY: string;
@@ -34,6 +34,7 @@ export default abstract class AbstractStatefulVideo extends EventPublisher imple
     EVENT_VOLUME_CHANGE: string;
     EVENT_SEEKED: string;
     EVENT_RATE_CHANGE: string;
+    EVENT_DEBUG_MESSAGE: string;
     abstract prepare(url: string, options: { [key: string]: any }): void;
     abstract destroy(): void;
     abstract play(): void;

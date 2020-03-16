@@ -13,7 +13,7 @@ export default interface IDevice extends IEventPublisher {
   EVENT_READY: string;
   init(): void;
   createVideo(rect: Rect): IVideo;
-  createStatefulVideo(rect: Rect): IStatefulVideo;
+  createStatefulVideo(): IStatefulVideo;
   getMAC(): string;
   getIP(): string;
   exit(): void;
@@ -26,6 +26,7 @@ export default interface IDevice extends IEventPublisher {
   hasOSDAlphaBlendingFeature(): boolean;
   hasOSDChromaKeyFeature(): boolean;
   isUHDSupported(): boolean;
+  isUHD8KSupported(): boolean;
   getEnvironment(): object;
   getLaunchParams(): object;
 }

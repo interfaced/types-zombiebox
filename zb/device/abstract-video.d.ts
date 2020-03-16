@@ -19,7 +19,7 @@ export default abstract class AbstractVideo extends EventPublisher implements IV
   EVENT_RATE_CHANGE: string;
   EVENT_VOLUME_CHANGE: string;
   EVENT_STATE_CHANGE: string;
-  abstract play(url: string, opt_startFrom?: number): void;
+  abstract play(url: string, startFrom?: number): void;
   abstract resume(): void;
   abstract pause(): void;
   abstract stop(): void;
@@ -35,8 +35,8 @@ export default abstract class AbstractVideo extends EventPublisher implements IV
   abstract getVolume(): number;
   abstract getUrl(): string;
   togglePause(): void;
-  volumeUp(opt_stp?: number): number;
-  volumeDown(opt_step?: number): number;
+  volumeUp(step?: number): number;
+  volumeDown(step?: number): number;
   setMuted(value: boolean): void;
   getMuted(): boolean;
   isMuted(): boolean;

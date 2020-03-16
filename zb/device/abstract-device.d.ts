@@ -15,7 +15,7 @@ export default abstract class AbstractDevice extends EventPublisher implements I
   EVENT_READY: string;
   abstract init(): void;
   abstract createVideo(rect: Rect): IVideo;
-  abstract createStatefulVideo(rect: Rect): IStatefulVideo;
+  abstract createStatefulVideo(): IStatefulVideo;
   abstract getMAC(): string;
   abstract getIP(): string;
   abstract exit(): void;
@@ -28,6 +28,7 @@ export default abstract class AbstractDevice extends EventPublisher implements I
   abstract hasOSDAlphaBlendingFeature(): boolean;
   abstract hasOSDChromaKeyFeature(): boolean;
   abstract isUHDSupported(): boolean;
+  abstract isUHD8KSupported(): boolean;
   abstract getEnvironment(): object;
   abstract getLaunchParams(): object;
 }

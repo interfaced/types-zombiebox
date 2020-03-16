@@ -27,6 +27,7 @@ export default interface IStatefulVideo extends IEventPublisher {
     EVENT_VOLUME_CHANGE: string;
     EVENT_SEEKED: string;
     EVENT_RATE_CHANGE: string;
+    EVENT_DEBUG_MESSAGE: string;
     prepare(url: string, options: { [key: string]: any }): void;
     destroy(): void;
     play(): void;
@@ -66,7 +67,19 @@ export enum State {
     DESTROYED = 'destroyed'
 }
 
-export const StateDiagram: { [key: string]: State[] };
+export const StateDiagram: {
+    [State.IDLE]: [State.LOADING, State.ERROR, State.DESTROYED, State.INVALID],
+    [State.LOADING]: [State.IDLE, State.READY, State.ERROR, State.DESTROYED],
+    [State.READY]: [State.IDLE, State.PLAYING, State.ERROR, State.DESTROYED],
+    [State.PLAYING]: [State.IDLE, State.PAUSED, State.SEEKING, State.WAITING, State.ENDED, State.ERROR, State.DESTROYED],
+    [State.PAUSED]: [State.IDLE, State.PLAYING, State.SEEKING, State.ERROR, State.DESTROYED],
+    [State.WAITING]: [State.IDLE, State.PLAYING, State.ENDED, State.ERROR, State.DESTROYED],
+    [State.SEEKING]: [State.IDLE, State.PLAYING, State.PAUSED, State.WAITING, State.ENDED, State.ERROR, State.DESTROYED],
+    [State.ENDED]: [State.IDLE, State.SEEKING, State.ERROR, State.DESTROYED],
+    [State.ERROR]: [State.IDLE, State.LOADING, State.PLAYING, State.PAUSED, State.WAITING, State.SEEKING, State.ENDED, State.DESTROYED],
+    [State.INVALID]: [State.DESTROYED],
+    [State.DESTROYED]: []
+};
 
 export enum MediaType {
     DASH = 'application/dash+xml',
@@ -78,5 +91,7 @@ export enum MediaType {
 
 export enum PrepareOption {
     TYPE = 'media-type',
-    START_POSITION = 'start-position'
+    START_POSITION = 'start-position',
+    IS_4K = 'is-4k',
+    IS_8K = 'is-8k'
 }

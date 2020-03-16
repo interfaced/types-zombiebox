@@ -9,5 +9,7 @@ export default interface IInfo {
   softwareVersion(): string;
   hardwareVersion(): string;
   osdResolutionType(): Resolution;
+  getPanelResolution(): Resolution;
+  getOSDResolution(): Resolution;
   locale(): string | null;
 }

@@ -9,7 +9,7 @@ export default abstract class AbstractInput extends EventPublisher implements II
   abstract isPointingDeviceSupported(): boolean;
   abstract enablePointingDevice(): void;
   abstract disablePointingDevice(opt_timeout?: number): void;
-  eventToKeyCode(e: KeyboardEvent | WheelEvent): Keys;
+  eventToKeyCode(event: KeyboardEvent | WheelEvent): Keys;
   eventToPrintableChar(keyboardEvent: KeyboardEvent): string | null;
   keyToPrintableChar(zbKey: Keys): string | null;
   setKeyEventHandler(handler: (event: KeyboardEvent | WheelEvent) => void): void;

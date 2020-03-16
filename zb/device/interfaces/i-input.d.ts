@@ -4,7 +4,7 @@ import Keys from '../input/keys';
 export default interface IInput extends IEventPublisher {
   EVENT_POINTING_DEVICE_ACTIVATED: string;
   EVENT_POINTING_DEVICE_DEACTIVATED: string;
-  eventToKeyCode(e: KeyboardEvent | WheelEvent): Keys;
+  eventToKeyCode(event: KeyboardEvent | WheelEvent): Keys;
   eventToPrintableChar(keyboardEvent: KeyboardEvent): string | null;
   keyToPrintableChar(zbKey: Keys): string | null;
   setKeyEventHandler(handler: (event: KeyboardEvent | WheelEvent) => void): void;

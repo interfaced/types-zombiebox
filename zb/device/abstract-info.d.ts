@@ -11,6 +11,8 @@ export default abstract class AbstractInfo implements IInfo {
   abstract softwareVersion(): string;
   abstract hardwareVersion(): string;
   abstract osdResolutionType(): Resolution;
+  abstract getPanelResolution(): Resolution;
+  abstract getOSDResolution(): Resolution;
   locale(): string | null;
   protected abstract _getLocale(): string;
   protected _getResolutionsByScreenSize(width: number, height: number): Resolution[];
