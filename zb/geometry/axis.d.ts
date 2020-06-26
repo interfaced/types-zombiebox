@@ -1,6 +1,6 @@
 declare enum Axis {
-  X = 0,
-  Y = 1,
+	X = 0,
+	Y = 1
 }
 
 export default Axis;
