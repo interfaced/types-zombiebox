@@ -79,7 +79,7 @@ export enum MediaType {
 
 export enum PrepareOption {
 	TYPE = 'media-type',
-	START_POSITION = 'start-position'
+	START_POSITION = 'start-position',
 	IS_4K = 'is-4k',
 	IS_8K = 'is-8k'
 }
