@@ -57,8 +57,8 @@ export default abstract class AbstractStatefulVideo extends EventPublisher imple
 	toggleMuted(): boolean;
 	abstract getVolume(): number;
 	abstract setVolume(volume: number): void;
-	volumeDown(): number;
-	volumeUp(): number;
+	volumeDown(step?: number): number;
+	volumeUp(step?: number): number;
 	attachDRM(client: IDRMClient): void;
 	detachDRM(type: DRMType): Promise<any>;
 	abstract getEngine(): any | null;

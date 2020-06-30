@@ -46,8 +46,8 @@ export default interface IStatefulVideo extends IEventPublisher {
 	toggleMuted(): boolean;
 	getVolume(): number;
 	setVolume(volume: number): void;
-	volumeDown(): number;
-	volumeUp(): number;
+	volumeDown(step?: number): number;
+	volumeUp(step?: number): number;
 	attachDRM(client: IDRMClient): void;
 	detachDRM(type: DRMType): Promise<any>;
 	getEngine(): any | null;
